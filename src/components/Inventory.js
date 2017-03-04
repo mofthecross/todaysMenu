@@ -143,19 +143,19 @@ class Inventory extends React.Component {
         </div>
       )
     }
-      return (
-        <div >
-          <h2>
-            Inventory
-            {logout}
-          </h2>
-          { Object.keys(this.props.fishes).map(this.renderInventory) }
-          <AddFishForm addFish={this.props.addFish}/>
-          <button onClick={this.props.loadSamples}>load fish</button>
-        </div>
-      )
-    }
 
+    return (
+      <div >
+        <h2>
+          Inventory
+          {logout}
+        </h2>
+        { Object.keys(this.props.fishes).map(this.renderInventory) }
+        <AddFishForm addFish={this.props.addFish}/>
+        <button onClick={this.props.loadSamples}>load fish</button>
+      </div>
+    )
+  }
 }
 
 export default Inventory;

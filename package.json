@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/mofthecross/todaysMenu/issues"
   },
-  "homepage": "https://github.com/mofthecross/todaysMenu#readme",
+  "homepage": "https://mofthecross.github.io/todaysMenu",
   "scripts": {
     "start": "react-scripts start",
     "watch": "concurrently --names \"webpack, stylus\" --prefix name \"npm run start\" \"npm run styles:watch\"",
