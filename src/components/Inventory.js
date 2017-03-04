@@ -12,6 +12,7 @@ class Inventory extends React.Component {
     this.renderInventory = this.renderInventory.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.renderLogin = this.renderLogin.bind(this);
+    this.logOut = this.logOut.bind(this);
     this.authenticate = this.authenticate.bind(this);
     this.authHandler = this.authHandler.bind(this);
   }
@@ -48,6 +49,11 @@ class Inventory extends React.Component {
   authenticate(provider) {
     console.log('authenticating', provider)
     base.authWithOAuthPopup(provider, this.authHandler)
+  }
+
+  logOut() {
+    base.unauth();
+    this.setState({ uid: null})
   }
 
   authHandler(err, authData) {
@@ -123,7 +129,7 @@ class Inventory extends React.Component {
   }
 
   render() {
-    const logout = <button>log out </button>
+    const logout = <button onClick={this.logOut}>log out </button>
     //check if they are not loggedin
     if (!this.state.uid) {
       return <div>{this.renderLogin()}</div>
